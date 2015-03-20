@@ -1,0 +1,17 @@
+{
+  "name": "node-todo",
+  "version": "0.0.1",
+  "description": "Simple todo application.",
+  "main": "server.js",
+  "author": "Myeong",
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "body-parser": "*",
+    "method-override": "*"
+  },
+  "devDependencies": {
+    "karma": "^0.12.31"
+  }
+}
