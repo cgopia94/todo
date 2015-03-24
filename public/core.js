@@ -1,6 +1,7 @@
 var theTodo = angular.module('theTodo', []).controller('mainController', 
 	function($scope, $http, $q) {
 		$scope.formData = {};
+		$scope.bttnName = 'Add';
 
 		$http.get('/api/todos')
 		.success(function(data) {
@@ -52,7 +53,7 @@ var theTodo = angular.module('theTodo', []).controller('mainController',
 		};
 
 		$scope.editTodo = function(id) {
-			$('#todoSubmit').text('Edit');
+			$scope.bttnName = 'Edit';
 			$scope.getTodo(id)
 			.then(function(data) {
 				$('#todoText').val(data.text);
@@ -67,7 +68,7 @@ var theTodo = angular.module('theTodo', []).controller('mainController',
 				$scope.formData = {};
 				$scope.todo = {};
 				$scope.todos = data;
-				$('#todoSubmit').text('Add');
+				$scope.bttnName = 'Add';
 				console.log(data);
 			})
 			.error(function(data) {
